@@ -136,11 +136,6 @@ function Checkout() {
                   {/* head */}
                   <thead>
                     <tr>
-                      {/* <th>
-                        <label>
-                          <input type="checkbox" className="checkbox" />
-                        </label>
-                      </th> */}
                       <th>Name Product</th>
                       <th>Price</th>
                       <th>Discount(%)</th>
@@ -153,11 +148,6 @@ function Checkout() {
                     {entities.map((item) => {
                       return (
                         <tr key={item.id}>
-                          {/* <th>
-                            <label>
-                              <input type="checkbox" className="checkbox" />
-                            </label>
-                          </th> */}
                           <td>
                             <div className="flex items-center space-x-3">
                               <div className="avatar">
@@ -178,13 +168,7 @@ function Checkout() {
                               </div>
                             </div>
                           </td>
-                          <td>
-                            $ {item.price}
-                            <br />
-                            {/* <span className="badge badge-ghost badge-sm">
-                              Desktop Support Technician
-                            </span> */}
-                          </td>
+                          <td>$ {item.price}</td>
                           <td>0%</td>
                           <th>-</th>
                           <th>
@@ -236,7 +220,6 @@ function Checkout() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }

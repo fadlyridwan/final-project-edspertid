@@ -23,10 +23,10 @@ function Header() {
                 </summary>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>men's clothing</a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>jewelery</a>
                   </li>
                 </ul>
               </details>
@@ -38,10 +38,10 @@ function Header() {
                 </summary>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>Admin 1</a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>Admin 2</a>
                   </li>
                 </ul>
               </details>
