@@ -1,27 +1,44 @@
-export default function App() {
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import ProductList from "./pages/productList";
+import DetailProduct from "./pages/detailProduct";
+import Layout from "./component/Layout";
+import Checkout from "./pages/payment/Checkout";
+import Instructions from "./pages/payment/Instructions";
+import { Provider } from "react-redux";
+
+import store from "./store";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <ProductList />,
+      },
+      {
+        path: "detail/:id",
+        element: <DetailProduct />,
+      },
+    ],
+  },
+  {
+    path: "checkout",
+    element: <Checkout />,
+  },
+  {
+    path: "pembayaran",
+    element: <Instructions />,
+  },
+]);
+
+function App() {
   return (
-    <>
-     <div className="navbar bg-base-100">
-  <div className="flex-1">
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
-  </div>
-  <div className="flex-none">
-    <ul className="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
-      <li>
-        <details>
-          <summary>
-            Parent
-          </summary>
-          <ul className="p-2 bg-base-100">
-            <li><a>Link 1</a></li>
-            <li><a>Link 2</a></li>
-          </ul>
-        </details>
-      </li>
-    </ul>
-  </div>
-</div>
-    </>
-  )
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 }
+
+export default App;
