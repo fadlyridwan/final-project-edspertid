@@ -1,4 +1,8 @@
-import { IconShoppingCart } from "@tabler/icons-react";
+import {
+  IconBuildingStore,
+  IconCircleLetterS,
+  IconShoppingCart,
+} from "@tabler/icons-react";
 import Logo from "../images/e-commerce.png";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -19,7 +23,7 @@ function Header() {
             <li tabIndex={0}>
               <details>
                 <summary className="text-sm font-bold text-white cursor-pointer">
-                  Categories
+                  <IconBuildingStore /> Categories
                 </summary>
                 <ul className="p-2">
                   <li>
@@ -34,7 +38,7 @@ function Header() {
             <li tabIndex={0}>
               <details>
                 <summary className="text-sm font-bold text-white cursor-pointer">
-                  Support
+                  <IconCircleLetterS /> Support
                 </summary>
                 <ul className="p-2">
                   <li>
@@ -46,18 +50,19 @@ function Header() {
                 </ul>
               </details>
             </li>
-            <li className="text-sm font-bold text-white cursor-pointer">
-              <div onClick={() => navigate("/checkout")} className="indicator">
-                <span className="indicator-item badge badge-secondary">
-                  {entities.length}
-                </span>
-                <a onClick={() => navigate("/checkout")}>
-                  <IconShoppingCart />
-                </a>
-              </div>
-            </li>
+            <li></li>
           </ul>
         </div>
+        <span className="text-sm font-bold text-white cursor-pointer pr-8">
+          <div onClick={() => navigate("/checkout")} className="indicator">
+            <span className="indicator-item badge badge-secondary">
+              {entities.length}
+            </span>
+            <a onClick={() => navigate("/checkout")}>
+              <IconShoppingCart />
+            </a>
+          </div>
+        </span>
         <button className="btn btn-primary">Masuk/Daftar</button>
       </div>
     </div>
